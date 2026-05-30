@@ -1,0 +1,13 @@
+{
+  "doctype": "Page",
+  "module": "Blockchain Scm",
+  "name": "blockchain-dashboard",
+  "page_name": "blockchain-dashboard",
+  "roles": [
+    {
+      "role": "System Manager"
+    }
+  ],
+  "standard": "Yes",
+  "title": "ChainGuard Dashboard"
+}

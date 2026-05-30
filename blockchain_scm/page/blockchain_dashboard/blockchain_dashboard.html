@@ -1,0 +1,89 @@
+<div class="chainguard-dashboard" role="main">
+  <header class="cg-header">
+    <div class="cg-title-group">
+      <p class="eyebrow">Supply chain security</p>
+      <h1>ChainGuard Dashboard</h1>
+      <p class="cg-description">Monitor blockchain health, node reputation, and attack simulations in one live operations view.</p>
+    </div>
+    <div class="status-panel" aria-label="Blockchain network status">
+      <span class="dot green"></span>
+      <div>
+        <div class="status-label">Chain status</div>
+        <div class="status-copy" id="chain-status">Validating...</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="kpi-grid" aria-label="Primary blockchain metrics">
+    <article class="kpi-card" aria-labelledby="throughput-label">
+      <div class="kpi-label" id="throughput-label">Throughput</div>
+      <div class="kpi-value" id="kpi-throughput">—</div>
+      <div class="kpi-unit">blocks / sec</div>
+    </article>
+    <article class="kpi-card" aria-labelledby="latency-label">
+      <div class="kpi-label" id="latency-label">Latency</div>
+      <div class="kpi-value" id="kpi-latency">—</div>
+      <div class="kpi-unit">ms</div>
+    </article>
+    <article class="kpi-card" aria-labelledby="blocks-label">
+      <div class="kpi-label" id="blocks-label">Total Blocks</div>
+      <div class="kpi-value" id="kpi-blocks">—</div>
+      <div class="kpi-unit">mined</div>
+    </article>
+    <article class="kpi-card danger" aria-labelledby="malicious-label">
+      <div class="kpi-label" id="malicious-label">Malicious Nodes</div>
+      <div class="kpi-value" id="kpi-malicious">—</div>
+      <div class="kpi-unit">detected</div>
+    </article>
+  </section>
+
+  <section class="cg-panel" aria-labelledby="simulator-heading">
+    <div class="section-header">
+      <div>
+        <h2 id="simulator-heading">Malicious Node Simulator</h2>
+        <p>Run controlled attack scenarios and compare the live network before and after.</p>
+      </div>
+      <span class="section-badge">Demo</span>
+    </div>
+
+    <form class="sim-controls" role="group" aria-label="Attack simulation controls">
+      <label class="field-label" for="sim-count">Malicious nodes to inject</label>
+      <input type="number" id="sim-count" name="sim-count" value="3" min="1" max="9" inputmode="numeric" aria-describedby="sim-count-help" />
+      <div id="sim-count-help" class="field-help">Set how many malicious nodes should join the network.</div>
+
+      <div class="button-group">
+        <button type="button" id="btn-seed-demo">Initialize Demo Network</button>
+        <button type="button" id="btn-simulate">Run Attack Simulation</button>
+        <button type="button" id="btn-reset">Reset Network</button>
+      </div>
+    </form>
+
+    <div id="sim-result" class="feedback" aria-live="polite" aria-atomic="true"></div>
+  </section>
+
+  <div class="dashboard-grid">
+    <section class="cg-panel" aria-labelledby="reputation-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="reputation-heading">Node Reputation Monitor</h2>
+          <p class="section-copy">Track every node's reputation score, warning state, and historical trust performance.</p>
+        </div>
+      </div>
+      <div id="reputation-table" class="data-panel">
+        <p class="muted">No nodes recorded yet. Seed the demo network or submit a supply chain transaction.</p>
+      </div>
+    </section>
+
+    <section class="cg-panel" aria-labelledby="chain-heading">
+      <div class="section-header">
+        <div>
+          <h2 id="chain-heading">Blockchain Audit Trail</h2>
+          <p class="section-copy">Review recent blockchain blocks and confirm the chain integrity in real time.</p>
+        </div>
+      </div>
+      <div id="chain-blocks" class="data-panel">
+        <p class="muted">Loading blocks...</p>
+      </div>
+    </section>
+  </div>
+</div>
